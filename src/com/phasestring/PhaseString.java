@@ -20,17 +20,16 @@ public class PhaseString {
     private String value;    
     
     public void phaseString(String input) {
-        String s = "Group Nmae [G001]";
         
-
-        
-        String s2 = s.substring(s.indexOf("[") + 1, s.lastIndexOf("]"));
+        String s2 = input.substring(input.indexOf("[") + 1, input.lastIndexOf("]"));
         
         if (s2.startsWith(GROUP)) {
             this.type = GROUP;
         } else {
             this.type = USER;
         }
+        
+        this.value = s2;
     }
 
     public String getType() {
